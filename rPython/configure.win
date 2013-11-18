@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo 'PKG_LIBS=-LC:/python27/libs -lpython27'  > src/makevars.win
+echo 'PKG_CFLAGS=-I"C:/Python27/include"'     >> src/makevars.win
+
