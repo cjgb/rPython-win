@@ -11,7 +11,7 @@ install.packages("devtools")
 library(devtools)
 ```
 * Download the package as a zip file (see "Download Zip" button to the right of this page).
-* Unzip the package and rename the directory as i`rPython` (not `rPython-win`).
+* Unzip the package and rename the directory as `rPython` (not `rPython-win`).
 * If needed, edit the `configure.win` file inside the directory. By default, it contains the lines
 
 ```
