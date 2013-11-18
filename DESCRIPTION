@@ -9,6 +9,5 @@ Depends: RJSONIO (>= 0.7-3)
 License: GPL-2
 SystemRequirements: Python (>= 2.7) and Python headers and libraries
         (See the INSTALL file)
-OS_type: unix
 URL: http://rpython.r-forge.r-project.org/
 Packaged: 2013-09-04 17:38:42 UTC; carlos
