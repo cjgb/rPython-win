@@ -24,8 +24,8 @@ python.call <- function( py.foo, ..., simplify = TRUE, as.is = FALSE ){
     # Creating the call
 
     python.command <- c( 
-        paste( "_r_args_dict ='", foo.args.dict, "'", sep = "" ),
-        paste( "_r_args_vect ='", foo.args.vect, "'", sep = "" ),
+        paste( "_r_args_dict ='''", foo.args.dict, "'''", sep = "" ),
+        paste( "_r_args_vect ='''", foo.args.vect, "'''", sep = "" ),
         "_r_args_dict = json.loads( _r_args_dict )",
         "_r_args_vect = json.loads( _r_args_vect )",
         python.command <- paste( "_r_call_return = ", py.foo, "(",
