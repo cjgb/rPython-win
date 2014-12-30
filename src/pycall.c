@@ -45,18 +45,20 @@ void py_get_var( const char** var_name, int* found, char** resultado )
 
     PyObject * module     = PyImport_AddModule("__main__");
     PyObject * dictionary = PyModule_GetDict(module);
-    PyObject * result     = PyDict_GetItemString(dictionary, *var_name );
+    PyObject * result     = PyDict_GetItemString(dictionary, *var_name);
 
     if( result == NULL ){
         *found = 1;
         *resultado = "";
         return;
     }
-
+     
 #ifdef PY3K
-     *resultado = PyBytes_AS_STRING( PyUnicode_AsUTF8String(result) );
+     *resultado = PyBytes_AsString( PyUnicode_AsUTF8String(result) );
+     //*resultado = PyBytes_AS_STRING( PyUnicode_AsUTF8String(result) );
+     //*resultado = PyUnicode_AsUTF8String(result);
 #else
-    *resultado = PyString_AS_STRING(result);
+    //*resultado = PyString_AS_STRING(result);
+    *resultado = PyString_AsString(result);
 #endif
-    // *resultado = PyUnicode_AsUTF8(result);				// Python 3?
 }
