@@ -6,6 +6,9 @@ python.assign <- function( var.name, value ){
 
     #value <- toJSON( value )
     value <- toJSON( value, collapse = "" )
+    
+    # Sometimes toJSON introduces newlines that disturb the python interpreter
+    value <- gsub("\n", "", value)
 
     # Creating the call
 
