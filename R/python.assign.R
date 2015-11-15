@@ -2,10 +2,9 @@
 # CGB, 20100707, created
 #########################################################
 
-python.assign <- function( var.name, value ){
+python.assign <- function(var.name, value, ...){
 
-    #value <- toJSON( value )
-    value <- toJSON( value, collapse = "" )
+    value <- toJSON( value, collapse = "", ...)
 
     # Creating the call
 

@@ -6,12 +6,13 @@
   Functions that assign and get Python variables from R.
 }
 \usage{
-  python.assign( var.name, value )
-  python.get( var.name )
+  python.assign(var.name, value, ...)
+  python.get(var.name)
 }
 \arguments{
   \item{var.name}{ a character string containing a valid python variable name }
   \item{value}{ an R object whose equivalent wants to be assigned to the variable in python }
+  \item{...}{ other arguments passed to the internal \code{toJSON} function call}
 }
 \details{
     These functions can assign values to variables in Python as well as get their values back to R.
