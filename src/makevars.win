@@ -1,0 +1,12 @@
+ifeq "$(WIN)" "64"
+PYTHONHOME='/python27/x64'
+PYTHONPATH='/python27/x64/Lib'
+PKG_LIBS=-LC:/python27/x64/libs -lpython27
+PKG_CFLAGS=-I"C:/Python27/x64/include"
+else
+# PATH
+PYTHONHOME='/python27/i386'
+PYTHONPATH='/python27/i386/Lib'
+PKG_LIBS=-LC:/python27/i386/libs -lpython27
+PKG_CFLAGS=-I"C:/Python27/i386/include"
+endif
