@@ -1,7 +1,6 @@
 #!/bin/sh
 
 rm src/pycall.o
-rm src/rPython.so
-rm srcc/symbols.rds
-rm config.log
-rm config.status
+rm src/rPython.so src/rPython.dll
+rm src/symbols.rds
+rm -rf src-i386/ src-x64/

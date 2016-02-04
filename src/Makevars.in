@@ -1,3 +1,0 @@
-# Required vars
-PKG_LIBS=@PKG_LIBS@
-PKG_CFLAGS=@PKG_CFLAGS@

@@ -5,25 +5,19 @@ This is rPython for Windows. If you are on Linux/Mac, you can [install it from C
 ## Installation
 
 * Install [Rtools](http://cran.r-project.org/bin/windows/Rtools/)
-* Install [devtools](http://cran.r-project.org/web/packages/devtools/index.html) by running 
-```
-install.packages("devtools")
-library(devtools)
-```
 * Download the package as a zip file (see "Download Zip" button to the right of this page).
-* Unzip the package and rename the directory as `rPython` (not `rPython-win`).
-* If needed, edit the `configure.win` file inside the directory. By default, it contains the lines
+* (Previous versions of this package contained `configure.*` files; these are not longer necessary and have been removed.)
+* As needed, edit the `src/makevars.win` file to identify the python path(s). The default assumes that 32-bit python is installed within `C:\Python27\i386`, and the 64-bit python is installed within `C:\Python27\x64`, with relatively identical sub-directory hierarchies.
 
-```
-echo 'PKG_LIBS=-LC:/python27/libs -lpython27'  > src/makevars.win
-echo 'PKG_CFLAGS=-I"C:/Python27/include"'     >> src/makevars.win
-``` 
+* Add the following to your `$HOME/.Rprofile` file:
 
-and you should edit them to point to the path where you installed Python. In the default configuration it is assumed that the Python version is 2.7 and that it is installed in `C:/Python27`. Change it according to your Python installation.
-* Install the package running `install("path/to/rPython")`. For instance, I run
-```
-install("C:/Users/carlos/Downloads/rPython")
-```
+    ```r
+    options(rPython.paths = list(i386 = "/Python27/i386", x64 = "/Python27/x64"))  
+    ```
+
+    This option is required to properly distinguish between 32-bit and 64-bit pythons (both for compilation and every time you load rPython). These instructions have not been tested on a system with only one version of python available ...
+
+* The package must be compiled on the command-line (`devtools` will not currently work). `R CMD INSTALL /path/to/rPython` (or `R CMD INSTALL .` if in the current directory). You may use `R CMD INSTALL --build .` if you want to create a binary package for storage or distribution.
 
 ## Issues
 
