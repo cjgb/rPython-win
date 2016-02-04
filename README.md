@@ -17,18 +17,7 @@ This is rPython for Windows. If you are on Linux/Mac, you can [install it from C
 
     This option is required to properly distinguish between 32-bit and 64-bit pythons (both for compilation and every time you load rPython). These instructions have not been tested on a system with only one version of python available ...
 
-* `devtools` cannot (currently) be used to compile and install this package, since it calls R with `--no-site-file` which bypasses the required options. You will need to manually compile and install the package on the command line with:
-
-    ```
-    # Either
-    R CMD INSTALL --build /path/to/rPython
-    # ... or
-    cd /path/to/rPython
-    R CMD INSTALL --build .
-
-    # And finally ...
-    R CMD INSTALL rPython_0.0-6.zip
-    ```
+* The package must be compiled on the command-line (`devtools` will not currently work). `R CMD INSTALL /path/to/rPython` (or `R CMD INSTALL .` if in the current directory). You may use `R CMD INSTALL --build .` if you want to create a binary package for storage or distribution.
 
 ## Issues
 
