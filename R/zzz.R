@@ -19,11 +19,11 @@
             wrongpyhome <- rpyopts[[wrongarch]]
             wrongpyhomewin <- normalizePath(wrongpyhome)
 
-            if (! nzchar(Sys.getenv("PYTHONHOME")) {
+            if (! nzchar(Sys.getenv("PYTHONHOME"))) {
               message("Manually setting PYTHONHOME: ", pyhome)
               Sys.setenv(PYTHONHOME = pyhomewin)
             }
-            if (! nzchar(Sys.getenv("PYTHONPATH")) {
+            if (! nzchar(Sys.getenv("PYTHONPATH"))) {
               message("Manually setting PYTHONPATH: ", pypath)
               Sys.setenv(PYTHONPATH = pypathwin)
             }
